@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
 
 body {
-  background-image: linear-gradient(lightgray, lightblue);
   margin: 0;
 }
 
@@ -52,7 +51,7 @@ header {
 
 footer {
   height: 10%;
-  background-color: rgba(255, 255, 255, 0.541);
+  background-color: rgba(78, 23, 129);
   color: #454663;
   font-size: 1.3rem;
   display: flex;
@@ -76,4 +75,27 @@ footer {
   color: white;
   font-weight: bold;
   margin-left: 1px;
+}
+
+.list-times {
+  display: flex;
+  justify-content: center;
+}
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: 1px solid black;
+  font-size: 1.1rem;
+}
+table thead {
+  background-color: rgb(42, 24, 98);
+  color: white;
+  font-weight: bold;
+}
+table tbody tr {
+  text-align: center;
+}
+table tbody tr:nth-child(odd) {
+  background-color: rgb(213, 228, 250);
 }
