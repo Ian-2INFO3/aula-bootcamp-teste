@@ -1,4 +1,11 @@
 <template>
-  <main>Times</main>
-  <RouterView />
+  <div class="container">
+    <div class="title">
+      <h2>Gerenciamento de Times</h2>
+    </div>
+    <div class="form-input">
+      <input type="text" />
+      <button>Salvar</button>
+    </div>
+  </div>
 </template>

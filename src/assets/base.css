@@ -1,1 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
 
+body {
+  background-color: #4f374d;
+  margin: 0;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-weight: normal;
+  height: 100vh;
+}
+
+main {
+  height: 80%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.router-link-active {
+  color: #98b7e1;
+}
+
+.title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+header span {
+  padding: 0 20px;
+}
+
+header {
+  height: 10%;
+  background-color: #454663;
+  color: #9bfae2;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+.form-input {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+footer {
+  height: 10%;
+  background-color: #9bfae2;
+  color: #454663;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding-left: 20px;
+}
