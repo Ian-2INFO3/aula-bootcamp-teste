@@ -33,7 +33,7 @@
           </tr>
           <tr>
             <td>3</td>
-            <td>Afonso</td>
+            <td>Pedro</td>
             <th>003</th>
             <td>???</td>
           </tr>

@@ -60,10 +60,11 @@ footer {
 }
 
 .form-input input {
-  width: 50%;
+  width: 25%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 10px;
+  margin: 5px;
 }
 
 .form-input button {
