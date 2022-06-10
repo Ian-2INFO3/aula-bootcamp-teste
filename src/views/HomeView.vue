@@ -1,3 +1,1 @@
-<template>
-  <main>Bem Vindo</main>
-</template>
+<template>Página de times</template>

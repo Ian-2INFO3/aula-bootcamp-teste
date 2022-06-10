@@ -59,8 +59,15 @@ footer {
   padding-left: 20px;
 }
 
-.form-input input {
+.input-maior{
   width: 25%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 5px;
+}
+.input-menor {
+  width: 15%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 10px;
