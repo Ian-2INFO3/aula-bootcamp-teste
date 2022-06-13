@@ -13,12 +13,26 @@ export default {
   },
   methods: {
     salvar() {
-      const novo_id = uuidv4();
-      this.times.push({
-        id: novo_id,
-        nome: this.novo_time,
-      });
-      this.novo_time = "";
+      if (this.novo_time !== "") {
+        const novo_id = uuidv4();
+        this.times.push({
+          id: novo_id,
+          nome: this.novo_time,
+        });
+        this.novo_time = "";
+      }
+    },
+    excluir(time) {
+      const indice = this.times.indexOf(time);
+      this.times.splice(indice, 1);
+    },
+    editar(time) {
+      this.novo_time = time.nome;
+      // const indice = this.times.indexOf(time);
+      // const novo_nome = prompt("Editar Nome do Time");
+      // this.times.forEach((time) => {
+      //   time[indice].nome = novo_nome;
+      // });
     },
   },
 };
@@ -31,6 +45,7 @@ export default {
     </div>
     <div class="form-input">
       <input
+        @keyup.enter="salvar"
         v-model="novo_time"
         type="text"
         placeholder="Nome do Time"
@@ -55,7 +70,10 @@ export default {
             <td>
               {{ time.nome }}
             </td>
-            <td>??</td>
+            <td>
+              <button @click="editar(time)">Editar</button>
+              <button @click="excluir(time)">Excluir</button>
+            </td>
           </tr>
         </tbody>
       </table>
