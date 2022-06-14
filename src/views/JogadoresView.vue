@@ -8,20 +8,17 @@ export default {
           jogadorid: "7313422d-7fa3-403f-aa3c-a14d3196991b",
           nome: "Caio",
           timeid: "8ecb8a1e-5114-496d-9bee-1308dccf4b87",
-          acao: "Atacante",
         },
         {
           novo_time: "",
           jogadorid: "736c8f35-b5cf-43bf-a9ee-e4d8950ee0a5",
           nome: "Afonso",
           timeid: "597ceef8-36ac-4b0e-859e-77551c9818c0	",
-          acao: "Zagueiro",
         },
         {
           jogadorid: "519d6a87-60c2-465a-aa2f-1b8d0ef079cf",
           nome: "Pedro",
           timeid: "630c1d03-cb59-460a-89b8-cca1d42c1bc6",
-          acao: "Goleiro",
         },
       ],
       novo_jogador: "",
@@ -38,6 +35,16 @@ export default {
         acao: "???",
       });
       this.novo_jogador = "";
+    },
+    excluir(jogador) {
+      const indice = this.jogadores.indexOf(jogador);
+      this.jogadores.splice(indice, 1);
+    },
+    editar(jogador) {
+      const novo_nome = prompt("Editar Nome do jogador");
+      if (novo_nome !== "") {
+        jogador.nome = novo_nome;
+      }
     },
   },
 };
@@ -79,7 +86,8 @@ export default {
               {{ jogador.timeid }}
             </td>
             <td>
-              {{ jogador.acao }}
+              <button @click="editar(jogador)">Editar</button>
+              <button @click="excluir(jogador)">Excluir</button>
             </td>
           </tr>
         </tbody>

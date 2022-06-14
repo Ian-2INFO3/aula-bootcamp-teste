@@ -27,12 +27,10 @@ export default {
       this.times.splice(indice, 1);
     },
     editar(time) {
-      this.novo_time = time.nome;
-      // const indice = this.times.indexOf(time);
-      // const novo_nome = prompt("Editar Nome do Time");
-      // this.times.forEach((time) => {
-      //   time[indice].nome = novo_nome;
-      // });
+      const novo_nome = prompt("Editar Nome do Time");
+      if (novo_nome !== "") {
+        time.nome = novo_nome;
+      }
     },
   },
 };
