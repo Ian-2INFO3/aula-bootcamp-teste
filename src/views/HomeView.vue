@@ -1,1 +1,1 @@
-<template>Página de times</template>
+<template>Livraria fulano de tal</template>
