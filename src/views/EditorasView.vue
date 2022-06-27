@@ -7,14 +7,14 @@ export default {
         {
           id: "630c1d03-cb59-460a-89b8-cca1d42c1bc6",
           nome: "Companhia das Letras",
-          site_lf: "https://www.companiadasletras.com.br",
-          site_nlf: "www.companiadasletras.com.br",
+          site_lf: "https://www.companhiadasletras.com.br",
+          site_nlf: "www.companhiadasletras.com.br",
         },
         {
           id: "597ceef8-36ac-4b0e-859e-77551c9818c0",
           nome: "Editora Rocco",
-          site_lf: "https://www.editorarocco.com.br",
-          site_nlf: "www.editorarocco.com.br",
+          site_lf: "https://www.rocco.com.br/",
+          site_nlf: "www.rocco.com.br",
         },
         {
           id: "8ecb8a1e-5114-496d-9bee-1308dccf4b87",
