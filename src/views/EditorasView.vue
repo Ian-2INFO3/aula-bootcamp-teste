@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     salvar() {
-      if (this.nova_editora !== "") {
+      if (this.nova_editora !== "" && this.novo_site !== "") {
         const novo_id = uuidv4();
         this.editoras.push({
           id: novo_id,
