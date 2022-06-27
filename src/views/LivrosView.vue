@@ -9,7 +9,7 @@ export default {
           nome: "The witcher",
           editoraid: "8ecb8a1e-5114-496d-9bee-1308dccf4b87",
           autor: "Andrzej Sapkowski",
-          cartegoria: "Drama",
+          cartegoria_id: "Drama",
         },
         {
           novo_editora: "",
@@ -17,14 +17,14 @@ export default {
           nome: "Grimório das Bruxas",
           editoraid: "597ceef8-36ac-4b0e-859e-77551c9818c0	",
           autor: "RONALD HUTTON",
-          cartegoria: "Drama",
+          cartegoria_id: "Medo",
         },
         {
           livroid: "519d6a87-60c2-465a-aa2f-1b8d0ef079cf",
           nome: "O pequeno príncipe",
           editoraid: "630c1d03-cb59-460a-89b8-cca1d42c1bc6",
           autor: "Antoine de Saint-Exupéry",
-          cartegoria: "Drama",
+          cartegoria_id: "Ficção",
         },
       ],
       novo_livro: "",
@@ -61,6 +61,7 @@ export default {
     </div>
     <div class="form-input">
       <input
+        @keyup.enter="salvar"
         v-model="novo_livro"
         type="text"
         placeholder="Nome do livro"
@@ -93,7 +94,7 @@ export default {
               {{ livro.autor }}
             </td>
             <td>
-              {{ livro.cartegoria }}
+              {{ livro.cartegoria_id }}
             </td>
             <td>
               {{ livro.editoraid }}

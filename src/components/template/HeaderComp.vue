@@ -1,3 +1,13 @@
+<script>
+export default {
+  data() {
+    return {
+      usuario: "Adm1",
+    };
+  },
+};
+</script>
+
 <template>
   <header>
     <div class="menu-esquerdo">
@@ -8,6 +18,7 @@
       <span> <RouterLink to="/livros">Livros</RouterLink> </span>
     </div>
     <div class="menu-direito">
+      <span> {{ usuario }} </span>
       <span>Sair</span>
     </div>
   </header>
