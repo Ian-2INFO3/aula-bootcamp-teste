@@ -32,14 +32,16 @@ export default {
   },
   methods: {
     salvar() {
-      const novo_idlivro = uuidv4();
-      const novo_ideditora = uuidv4();
-      this.livros.push({
-        livroid: novo_idlivro,
-        editoraid: novo_ideditora,
-        nome: this.novo_livro,
-      });
-      this.novo_livro = "";
+      if (this.novo_livro !== "") {
+        const novo_idlivro = uuidv4();
+        const novo_ideditora = uuidv4();
+        this.livros.push({
+          livroid: novo_idlivro,
+          editoraid: novo_ideditora,
+          nome: this.novo_livro,
+        });
+        this.novo_livro = "";
+      }
     },
     excluir(livro) {
       const indice = this.livros.indexOf(livro);
@@ -67,7 +69,7 @@ export default {
         placeholder="Nome do livro"
         class="input-maior"
       />
-      <input type="text" placeholder="Id do editora" class="input-menor" />
+
       <button @click="salvar">Salvar</button>
     </div>
     <div class="list-editoras">
