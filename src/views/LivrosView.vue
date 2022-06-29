@@ -5,26 +5,25 @@ export default {
     return {
       livros: [
         {
-          livroid: "7313422d-7fa3-403f-aa3c-a14d3196991b",
+          id_livro: "7313422d-7fa3-403f-aa3c-a14d3196991b",
           nome: "The witcher",
-          editoraid: "8ecb8a1e-5114-496d-9bee-1308dccf4b87",
-          autor: "Andrzej Sapkowski",
-          cartegoria_id: "Drama",
+          id_editora: "8ecb8a1e-5114-496d-9bee-1308dccf4b87",
+          id_autor: "4b95ec3f-c3a0-49d9-971d-b3696657fbbd",
+          id_cartegoria: "16390338-fb77-4e4c-84f9-da9d1a1bdee7",
         },
         {
-          novo_editora: "",
-          livroid: "736c8f35-b5cf-43bf-a9ee-e4d8950ee0a5",
+          id_livro: "736c8f35-b5cf-43bf-a9ee-e4d8950ee0a5",
           nome: "Grimório das Bruxas",
-          editoraid: "597ceef8-36ac-4b0e-859e-77551c9818c0	",
-          autor: "RONALD HUTTON",
-          cartegoria_id: "Medo",
+          id_editora: "597ceef8-36ac-4b0e-859e-77551c9818c0	",
+          id_autor: "ec38e964-9ddc-4d39-b6e3-688e239f8da9",
+          id_cartegoria: "933f3ba7-0a49-4e63-80c3-134600987018",
         },
         {
-          livroid: "519d6a87-60c2-465a-aa2f-1b8d0ef079cf",
+          id_livro: "519d6a87-60c2-465a-aa2f-1b8d0ef079cf",
           nome: "O pequeno príncipe",
-          editoraid: "630c1d03-cb59-460a-89b8-cca1d42c1bc6",
-          autor: "Antoine de Saint-Exupéry",
-          cartegoria_id: "Ficção",
+          id_editora: "630c1d03-cb59-460a-89b8-cca1d42c1bc6",
+          id_autor: "d48aca58-0c61-46fc-896f-9ea630a90cfb",
+          id_cartegoria: "ed4a44b6-720b-4b7b-a4fa-a2ff27ec3d17",
         },
       ],
       novo_livro: "",
@@ -35,10 +34,14 @@ export default {
       if (this.novo_livro !== "") {
         const novo_idlivro = uuidv4();
         const novo_ideditora = uuidv4();
+        const novo_idautor = uuidv4();
+        const novo_idcartegoria = uuidv4();
         this.livros.push({
-          livroid: novo_idlivro,
-          editoraid: novo_ideditora,
+          id_livro: novo_idlivro,
+          id_editora: novo_ideditora,
           nome: this.novo_livro,
+          id_autor: novo_idautor,
+          id_cartegoria: novo_idcartegoria,
         });
         this.novo_livro = "";
       }
@@ -78,8 +81,8 @@ export default {
           <tr>
             <th>ID-livro</th>
             <th>Nome</th>
-            <th>Autor</th>
-            <th>Cartegoria</th>
+            <th>Autor-id</th>
+            <th>Cartegoria-id</th>
             <th>Editora-Id</th>
             <th>Ações</th>
           </tr>
@@ -87,19 +90,19 @@ export default {
         <tbody>
           <tr v-for="livro in livros" :key="livro.id">
             <td>
-              {{ livro.livroid }}
+              {{ livro.id_livro }}
             </td>
             <td>
               {{ livro.nome }}
             </td>
             <td>
-              {{ livro.autor }}
+              {{ livro.id_autor }}
             </td>
             <td>
-              {{ livro.cartegoria_id }}
+              {{ livro.id_cartegoria }}
             </td>
             <td>
-              {{ livro.editoraid }}
+              {{ livro.id_editora }}
             </td>
             <td>
               <button @click="editar(livro)">Editar</button>

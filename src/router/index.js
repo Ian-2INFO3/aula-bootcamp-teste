@@ -19,6 +19,16 @@ const router = createRouter({
       name: "editoras",
       component: () => import("../views/EditorasView.vue"),
     },
+    {
+      path: "/cartegorias",
+      name: "cartegorias",
+      component: () => import("../views/CartegoriasView.vue"),
+    },
+    {
+      path: "/autores",
+      name: "autores",
+      component: () => import("../views/AutoresView.vue"),
+    },
   ],
 });
 
