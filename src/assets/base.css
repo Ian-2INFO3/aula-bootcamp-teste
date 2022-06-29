@@ -59,7 +59,7 @@ footer {
   padding-left: 20px;
 }
 
-.input-maior{
+.input-maior {
   width: 25%;
   padding: 0.5rem;
   border: 1px solid #ccc;
@@ -72,6 +72,7 @@ footer {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin: 5px;
+  background-color: white;
 }
 
 .form-input button {
