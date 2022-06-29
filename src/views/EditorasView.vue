@@ -5,19 +5,19 @@ export default {
     return {
       editoras: [
         {
-          id: "630c1d03-cb59-460a-89b8-cca1d42c1bc6",
+          id_editora: "630c1d03-cb59-460a-89b8-cca1d42c1bc6",
           nome: "Companhia das Letras",
           site_lf: "https://www.companhiadasletras.com.br",
           site_nlf: "www.companhiadasletras.com.br",
         },
         {
-          id: "597ceef8-36ac-4b0e-859e-77551c9818c0",
+          id_editora: "597ceef8-36ac-4b0e-859e-77551c9818c0",
           nome: "Editora Rocco",
           site_lf: "https://www.rocco.com.br/",
           site_nlf: "www.rocco.com.br",
         },
         {
-          id: "8ecb8a1e-5114-496d-9bee-1308dccf4b87",
+          id_editora: "8ecb8a1e-5114-496d-9bee-1308dccf4b87",
           nome: "Editora Arqueiro",
           site_lf: "https://www.editoraarqueiro.com.br",
           site_nlf: "www.editoraarqueiro.com.br",
@@ -30,9 +30,9 @@ export default {
   methods: {
     salvar() {
       if (this.nova_editora !== "" && this.novo_site !== "") {
-        const novo_id = uuidv4();
+        const novo_id_editora = uuidv4();
         this.editoras.push({
-          id: novo_id,
+          id_editora: novo_id_editora,
           nome: this.nova_editora,
           site_nlf: this.novo_site,
           site_lf: "https://" + this.novo_site,
@@ -89,7 +89,7 @@ export default {
         <tbody>
           <tr v-for="editora in editoras" :key="editora.id">
             <td>
-              {{ editora.id }}
+              {{ editora.id_editora }}
             </td>
             <td>
               {{ editora.nome }}
