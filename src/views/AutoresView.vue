@@ -20,11 +20,12 @@ export default {
       novo_autor: {
         nome: "",
       },
+      indice_editar: -1,
     };
   },
   methods: {
     salvar() {
-      if (this.novo_autor.descricao !== "") {
+      if (this.novo_autor.nome !== "") {
         if (this.novo_autor.id_autor) {
           this.autores.splice(this.indice_editar, 1, this.novo_autor);
           this.indice_editar = -1;
@@ -39,7 +40,7 @@ export default {
     },
     excluir(autor) {
       const indice = this.autors.indexOf(autor);
-      this.autors.splice(indice, 1);
+      this.autores.splice(indice, 1);
     },
     editar(autor) {
       const indice = this.autores.indexOf(autor);

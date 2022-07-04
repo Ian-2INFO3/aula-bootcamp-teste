@@ -20,6 +20,7 @@ export default {
       nova_categoria: {
         descricao: "",
       },
+      indice_editar: -1,
     };
   },
   methods: {

@@ -24,6 +24,7 @@ export default {
         },
       ],
       nova_editora: { nome: "", site_lf: "", site_lnf: "" },
+      indice_editar: -1,
     };
   },
   methods: {
