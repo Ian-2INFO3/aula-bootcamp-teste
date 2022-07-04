@@ -17,29 +17,34 @@ export default {
           nome: "Antoine de Saint-Exupéry",
         },
       ],
-      novo_autor: "",
+      novo_autor: {
+        nome: "",
+      },
     };
   },
   methods: {
     salvar() {
-      if (this.novo_autor !== "") {
-        const novo_id_autor = uuidv4();
-        this.autores.push({
-          id_autor: novo_id_autor,
-          nome: this.novo_autor,
-        });
-        this.novo_autor = "";
+      if (this.novo_autor.descricao !== "") {
+        if (this.novo_autor.id_autor) {
+          this.autores.splice(this.indice_editar, 1, this.novo_autor);
+          this.indice_editar = -1;
+        } else {
+          this.novo_autor.id_autor = uuidv4();
+          this.autores.push(this.novo_autor);
+        }
+        this.novo_autor = {
+          descricao: "",
+        };
       }
     },
     excluir(autor) {
-      const indice = this.autores.indexOf(autor);
-      this.autores.splice(indice, 1);
+      const indice = this.autors.indexOf(autor);
+      this.autors.splice(indice, 1);
     },
     editar(autor) {
-      const novo_nome = prompt("Editar Nome do autor");
-      if (novo_nome !== "") {
-        autor.nome = novo_nome;
-      }
+      const indice = this.autores.indexOf(autor);
+      this.indice_editar = indice;
+      Object.assign(this.novo_autor, autor);
     },
   },
 };
@@ -52,7 +57,7 @@ export default {
     <div class="form-input">
       <input
         @keyup.enter="salvar"
-        v-model="novo_autor"
+        v-model="novo_autor.nome"
         type="text"
         placeholder="Nome do autor"
         class="input-maior"

@@ -8,36 +8,38 @@ export default {
           id_editora: "630c1d03-cb59-460a-89b8-cca1d42c1bc6",
           nome: "Companhia das Letras",
           site_lf: "https://www.companhiadasletras.com.br",
-          site_nlf: "www.companhiadasletras.com.br",
+          site_lnf: "www.companhiadasletras.com.br",
         },
         {
           id_editora: "597ceef8-36ac-4b0e-859e-77551c9818c0",
           nome: "Editora Rocco",
           site_lf: "https://www.rocco.com.br/",
-          site_nlf: "www.rocco.com.br",
+          site_lnf: "www.rocco.com.br",
         },
         {
           id_editora: "8ecb8a1e-5114-496d-9bee-1308dccf4b87",
           nome: "Editora Arqueiro",
           site_lf: "https://www.editoraarqueiro.com.br",
-          site_nlf: "www.editoraarqueiro.com.br",
+          site_lnf: "www.editoraarqueiro.com.br",
         },
       ],
-      nova_editora: "",
-      novo_site: "",
+      nova_editora: { nome: "", site_lf: "", site_lnf: "" },
     };
   },
   methods: {
     salvar() {
-      if (this.nova_editora !== "" && this.novo_site !== "") {
-        const novo_id_editora = uuidv4();
-        this.editoras.push({
-          id_editora: novo_id_editora,
-          nome: this.nova_editora,
-          site_nlf: this.novo_site,
-          site_lf: "https://" + this.novo_site,
-        });
-        this.novo_editora = "";
+      if (this.nova_editora.nome !== "" && this.nova_editora.site_lnf !== "") {
+        if (this.nova_editora.id_editora) {
+          this.editoras.splice(this.indice_editar, 1, this.nova_editora);
+          this.indice_editar = -1;
+        } else {
+          this.nova_editora.id_editora = uuidv4();
+          this.editoras.push(this.nova_editora);
+        }
+        this.nova_editora = {
+          nome: "",
+          site_lnf: "",
+        };
       }
     },
     excluir(editora) {
@@ -45,10 +47,9 @@ export default {
       this.editoras.splice(indice, 1);
     },
     editar(editora) {
-      const novo_nome = prompt("Editar Nome do editora");
-      if (novo_nome !== "") {
-        editora.nome = novo_nome;
-      }
+      const indice = this.editoras.indexOf(editora);
+      this.indice_editar = indice;
+      Object.assign(this.nova_editora, editora);
     },
   },
 };
@@ -62,14 +63,14 @@ export default {
     <div class="form-input">
       <input
         @keyup.enter="salvar"
-        v-model="nova_editora"
+        v-model="nova_editora.nome"
         type="text"
         placeholder="Nome do editora"
         class="input-maior"
       />
       <input
         @keyup.enter="salvar"
-        v-model="novo_site"
+        v-model="nova_editora.site_lnf"
         type="text"
         placeholder="Nome do site"
         class="input-maior"
@@ -96,7 +97,7 @@ export default {
             </td>
             <td>
               <a target="blank" :href="editora.site_lf">
-                {{ editora.site_nlf }}</a
+                {{ editora.site_lnf }}</a
               >
             </td>
             <td>
