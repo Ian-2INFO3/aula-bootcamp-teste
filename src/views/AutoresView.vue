@@ -39,7 +39,7 @@ export default {
       }
     },
     excluir(autor) {
-      const indice = this.autors.indexOf(autor);
+      const indice = this.autores.indexOf(autor);
       this.autores.splice(indice, 1);
     },
     editar(autor) {
